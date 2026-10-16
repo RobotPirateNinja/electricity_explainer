@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volts, Amps, Ohms &amp; Watts</title>
+    <meta name="description" content="Build a circuit, squeeze a water pipe and light a bulb to see how voltage, current, resistance and power work together. Every word explained." />
+    <meta name="theme-color" content="#f08c00" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icons/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="Electricity" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Social link previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Explainers for Titus" />
+    <meta property="og:title" content="Volts, Amps, Ohms &amp; Watts" />
+    <meta property="og:description" content="Build a circuit, squeeze a water pipe and light a bulb to see how electricity works. Every word explained." />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Volts, Amps, Ohms and Watts: a battery lighting a glowing bulb" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Volts, Amps, Ohms &amp; Watts" />
+    <meta name="twitter:description" content="Build a circuit, squeeze a water pipe and light a bulb to see how electricity works." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/og-image.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="kicker">Explainers for Titus</p>
+        <h1><span class="c-volt">Volts</span>, <span class="c-amp">Amps</span>, <span class="c-ohm">Ohms</span> &amp; <span class="c-watt">Watts</span></h1>
+        <p class="lead" data-linkify>
+          {{electricity|Electricity}} is invisible, but you can see what it does. It all comes down to four ideas:
+          how hard it’s pushed ({{voltage}}), how much flows ({{current}}), what squeezes it ({{resistance}}),
+          and how much work it does ({{power}}).
+        </p>
+        <div class="tip-banner" data-linkify>
+          <b>Word detective tip:</b> any word with a dotted underline, like {{electron}},
+          can be tapped or hovered to find out what it means. Words inside the bubbles work too!
+        </div>
+      </header>
+
+      <!-- 1. Circuits, conductors and insulators -->
+      <section class="section" id="circuit">
+        <h2><span class="step">1</span> Round and round: the circuit</h2>
+        <p data-linkify>
+          Every {{wire}} is packed with {{electron|electrons}}, tiny bits of {{atom|atoms}} that can carry {{electricity}}.
+          A {{battery}} gives them a push: they rush out of its {{negative|−}} end, all the way round the loop, and back into its {{positive|+}} end.
+          That loop is called a {{circuit}}, and it has to be complete. One gap anywhere, and every electron stops.
+        </p>
+        <p data-linkify>This circuit has a gap at the bottom. What can you use to bridge it?</p>
+
+        <div class="lab">
+          <div class="diagram-card">
+            <svg id="gap-svg" class="diagram" role="img" aria-label="A battery and a bulb with a gap in the circuit"></svg>
+          </div>
+          <div class="side-panel">
+            <h3>Things from the kitchen drawer</h3>
+            <div class="item-grid" id="gap-items"></div>
+            <p class="verdict" id="gap-verdict" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="callouts">
+          <div class="callout" data-linkify>
+            <h3>Conductors and insulators</h3>
+            <p>{{conductor|Conductors}} let electricity through, because their electrons are free to move. {{insulator|Insulators}} block it,
+              because their electrons are stuck tight. Wires use both: {{copper}} inside to carry the electricity, and plastic outside to keep your fingers safe.</p>
+          </div>
+          <div class="callout callout-safety" data-linkify>
+            <h3>⚠️ Stay safe</h3>
+            <p>Small batteries like AA {{cell|cells}} are safe to experiment with. The sockets in the wall are <b>not</b>: they push with
+              over 100 {{volt|volts}}, enough to badly hurt or even kill. Never poke anything into a socket, and keep electricity away from water.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. The lab -->
+      <section class="section" id="lab">
+        <h2><span class="step">2</span> Push, flow and squeeze</h2>
+        <p data-linkify>
+          Electricity is hard to picture, so here’s an {{analogy}}: imagine water flowing through a pipe.
+          Both pictures below are controlled by the same sliders, so you can watch them side by side.
+        </p>
+        <ul class="side-names" data-linkify>
+          <li><span class="swatch sw-volt"></span><span><b>{{voltage|Voltage}}</b> is the <b>push</b>. In the water picture, it’s how deep the tank is.</span></li>
+          <li><span class="swatch sw-ohm"></span><span><b>{{resistance|Resistance}}</b> is the <b>squeeze</b>: something narrow that fights the flow.</span></li>
+          <li><span class="swatch sw-amp"></span><span><b>{{current|Current}}</b> is the <b>flow</b>: how much rushes past each second.</span></li>
+          <li><span class="swatch sw-watt"></span><span><b>{{power|Power}}</b> is the <b>work</b> being done: a glowing bulb, or a spinning water wheel.</span></li>
+        </ul>
+
+        <div class="twin">
+          <figure class="diagram-card">
+            <svg id="lab-svg" class="diagram" role="img" aria-label="A circuit with a battery, a bulb, a resistor and a switch"></svg>
+            <figcaption>The real circuit. Tap the switch to flip it.</figcaption>
+          </figure>
+          <figure class="diagram-card">
+            <svg id="water-svg" class="diagram" role="img" aria-label="Water flowing from a tank through a narrow pipe to turn a water wheel"></svg>
+            <figcaption>The water picture. Tap the tap to turn it.</figcaption>
+          </figure>
+        </div>
+
+        <div class="diagram-card controls-card">
+          <div class="control-row">
+            <label for="lab-volts" data-linkify>{{voltage|Push}}</label>
+            <input id="lab-volts" type="range" min="0" max="12" step="0.5" />
+            <output class="big-out c-volt" id="lab-volts-out"></output>
+          </div>
+          <div class="control-row">
+            <label for="lab-ohms" data-linkify>{{resistance|Squeeze}}</label>
+            <input id="lab-ohms" type="range" min="1" max="50" step="1" />
+            <output class="big-out c-ohm" id="lab-ohms-out"></output>
+          </div>
+          <div class="control-row">
+            <button class="play" id="lab-switch" type="button">Switch off</button>
+            <p class="same-flash" id="lab-flash" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="readout-grid">
+          <div class="ratio-card rc-volt">
+            <div class="ratio-top"><span class="ratio-name" data-linkify>{{voltage|Voltage}}</span><span class="ratio-value" id="v-volt"></span></div>
+            <div class="meter"><span id="m-volt"></span></div>
+            <p class="ratio-means" data-linkify>The <b>push</b>, in {{volt|volts}}. You set it with the slider.</p>
+          </div>
+          <div class="ratio-card rc-ohm">
+            <div class="ratio-top"><span class="ratio-name" data-linkify>{{resistance|Resistance}}</span><span class="ratio-value" id="v-ohm"></span></div>
+            <div class="meter"><span id="m-ohm"></span></div>
+            <p class="ratio-means" data-linkify>The <b>squeeze</b>, in {{ohm|ohms}}. You set this one too.</p>
+          </div>
+          <div class="ratio-card rc-amp">
+            <div class="ratio-top"><span class="ratio-name" data-linkify>{{current|Current}}</span><span class="ratio-value" id="v-amp"></span></div>
+            <div class="ratio-sum" id="s-amp"></div>
+            <div class="meter"><span id="m-amp"></span></div>
+            <p class="ratio-means" data-linkify>The <b>flow</b>, in {{amp|amps}}. Push ÷ squeeze.</p>
+          </div>
+          <div class="ratio-card rc-watt">
+            <div class="ratio-top"><span class="ratio-name" data-linkify>{{power|Power}}</span><span class="ratio-value" id="v-watt"></span></div>
+            <div class="ratio-sum" id="s-watt"></div>
+            <div class="meter"><span id="m-watt"></span></div>
+            <p class="ratio-means" data-linkify>The <b>work</b>, in {{watt|watts}}. Push × flow.</p>
+          </div>
+        </div>
+
+        <div class="callouts">
+          <div class="callout" data-linkify>
+            <h3>The big idea</h3>
+            <p>More push means more flow. More squeeze means less flow. That’s {{ohms-law|Ohm’s law}}, and it works for every circuit there is.
+              Try it: keep the push the same and slide the squeeze up and down.</p>
+          </div>
+          <div class="callout" data-linkify>
+            <h3>Why do things get hot?</h3>
+            <p>When electrons are forced through {{resistance}}, they bump and jostle and some of their {{energy}} turns into {{heat}}.
+              That’s how a bulb’s {{filament}} glows, and how a toaster toasts. With almost no resistance at all you get a {{short-circuit}}, and that’s dangerous.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Watts at home -->
+      <section class="section" id="watts">
+        <h2><span class="step">3</span> Watts around the house</h2>
+        <p data-linkify>
+          Every {{appliance}} has a {{power}} rating in {{watt|watts}}: how much electricity it uses every second it’s switched on.
+          Things that make {{heat}} use the most. Pick one and compare it with a little {{led|LED}} light bulb.
+        </p>
+        <div class="item-grid wide-grid" id="appliance-list"></div>
+        <div class="diagram-card appliance-card">
+          <p class="appliance-info" id="appliance-info" aria-live="polite"></p>
+          <div class="led-grid" id="led-grid" role="img"></div>
+        </div>
+      </section>
+
+      <!-- 4. How they relate -->
+      <section class="section" id="relations">
+        <h2><span class="step">4</span> How they’re connected</h2>
+        <p data-linkify>
+          Voltage, current, resistance and power are a team. If you know two of them, you can always work out the others.
+          Cover one letter with your finger and the triangle tells you the {{formula}}. The numbers come straight from the lab in step 2.
+        </p>
+        <div id="relations-root"></div>
+      </section>
+
+      <!-- 5. Missions -->
+      <section class="section" id="missions">
+        <h2><span class="step">5</span> Missions</h2>
+        <p>Use everything above to complete each mission. They tick themselves off when you get there.</p>
+        <ol class="mission-list" id="mission-list"></ol>
+        <p class="mission-score" id="mission-score"></p>
+      </section>
+
+      <!-- 6. Word bank -->
+      <section class="section" id="words">
+        <h2><span class="step">6</span> Word bank</h2>
+        <p>Every word from this page, all in one place.</p>
+        <div class="word-grid" id="word-bank"></div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
